@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI와 함께 성장하는 디자인과: 올바른 활용을 위한 첫걸음</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #F4F7F9; /* Supporting Light Blue */
+            color: #263238; /* Dark Text */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .card {
+            background-color: #FFFFFF; /* Light Background */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 2.25rem; /* 28pt equivalent */
+            font-weight: 800; /* Very bold */
+            color: #2A62B6; /* Primary Blue */
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            font-size: 1.5rem; /* 18pt equivalent */
+            font-weight: 800; /* Very bold */
+            color: #2A62B6; /* Primary Blue */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #E0F2FE;
+        }
+        h3 {
+            font-size: 1.125rem; /* 14pt equivalent */
+            font-weight: 700; /* Bold */
+            color: #4ECDC4; /* Secondary Teal */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        h4 {
+            font-size: 1rem; /* 12pt equivalent */
+            font-weight: 600; /* Slightly bold */
+            color: #263238; /* Dark Text */
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-size: 0.9375rem; /* 11pt equivalent */
+            font-weight: 500; /* Medium */
+            margin-bottom: 1rem;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Adjusted for better chart presentation */
+            height: 350px; /* Fixed height for consistency */
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9375rem; /* 11pt equivalent */
+            font-weight: 500; /* Medium */
+        }
+        .highlight-text {
+            color: #2A62B6;
+            font-weight: bold;
+        }
+        .footnote {
+            font-size: 0.8rem;
+            color: #A9A9A9;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#4ECDC4] selection:text-white">
+    <header class="bg-gradient-to-r from-[#2A62B6] to-[#4ECDC4] text-white py-8 text-center shadow-lg">
+        <div class="container">
+            <h1 class="text-white !font-extrabold !text-4xl md:!text-5xl lg:!text-6xl">AI와 함께 성장하는 디자인과: 올바른 활용을 위한 첫걸음</h1>
+            <p class="text-lg md:text-xl mt-4 opacity-90">미림 마이스터고 디자인과 학생들의 AI 인식 및 활용 실태 조사 보고서</p>
+        </div>
+    </header>
+
+    <main class="container py-8">
+        <section class="card">
+            <h2>1. 조사 동기와 목적</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3>조사 동기</h3>
+                    <p>최근 인공지능(AI) 기술은 빠르게 발전하며 교육, 디자인, 일상생활 등 다양한 분야에서 활용되고 있다. 특히 학생들 사이에서도 AI 도구를 활용해 과제를 수행하거나 아이디어를 확장하는 사례가 증가하고 있다. 그러나 AI 기술을 단순한 편리함으로만 인식하거나, 정확한 정보 없이 무분별하게 사용하는 경우도 함께 늘어나고 있다.</p>
+                    <p>이러한 상황에서 미림 마이스터 고등학교 디자인과 학생들이 AI에 대해 어떻게 인식하고 있으며, 실제로 어떻게 활용하고 있는지를 파악하는 것은 AI 시대의 교육적 방향성을 설정하는 데 필수적이다.</p>
+                </div>
+                <div>
+                    <h3>조사 목적</h3>
+                    <p>본 보고서는 디자인과 학생들이 AI를 어떻게 인식하고 있으며, 실제로 어떤 방식으로 활용하고 있는지를 조사하여 다음과 같은 목적을 달성하고자 한다.</p>
+                    <ul class="list-disc ml-6 text-gray-700">
+                        <li><strong>정보 제공:</strong> 다른 학생들이 AI를 어떻게 사용하는지 구체적인 사례를 제시함으로써, 다양한 활용 방법을 소개한다.</li>
+                        <li><strong>인식 개선:</strong> AI에 대한 부정확하거나 단편적인 인식을 바로잡고, 기술에 대한 균형 잡힌 시각을 갖도록 돕는다.</li>
+                        <li><strong>활용 가이드 제시:</strong> AI를 효과적이면서도 책임 있게 사용할 수 있는 올바른 활용법을 제안하여, 기술의 남용을 방지하고 긍정적인 방향으로 활용될 수 있도록 유도한다.</li>
+                    </ul>
+                    <p>디자인과 학생들은 창의적인 사고와 시각적 표현 능력을 필요로 한다. 따라서 AI를 어떻게 활용하느냐에 따라 학습과 표현의 폭이 크게 달라질 수 있다. 본 보고서는 AI와 함께 살아가는 시대 속에서 디자인과 학생들이 기술을 자신의 성장과 학습에 유익하게 활용할 수 있도록 지원하는 데 기여하고자 한다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>2. 조사 계획</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="border-l-4 border-[#2A62B6] pl-4">
+                    <h3>조사 기간</h3>
+                    <p>2025년 5월 16일 ~ 5월 20일 (총 5일간) 실시했다.</p>
+                </div>
+                <div class="border-l-4 border-[#4ECDC4] pl-4">
+                    <h3>조사 대상</h3>
+                    <p>미림마이스터고 디자인과 1학년 5반 학생 <span class="highlight-text">19명 전원</span>을 대상으로 했다.</p>
+                </div>
+                <div class="border-l-4 border-[#A9A9A9] pl-4 col-span-full md:col-span-1 lg:col-span-1">
+                    <h3>조사 방법</h3>
+                    <ul class="list-none p-0">
+                        <li class="mb-2">
+                            <h4 class="text-base font-semibold text-[#263238]">설문조사</h4>
+                            <p class="pl-4">Google Forms를 활용하여 객관식 문항 2개, 주관식 문항 1개로 구성했다.</p>
+                        </li>
+                        <li>
+                            <h4 class="text-base font-semibold text-[#263238]">인터뷰</h4>
+                            <p class="pl-4">AI에 대한 학생들의 생각을 보조 자료로 활용했다. 공통 질문 2가지와 개인화된 질문 1~3가지를 활용했다.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>3. 조사 결과</h2>
+
+            <h3>설문 조사 결과</h3>
+
+            <div class="chart-container">
+                <canvas id="perceptionChart"></canvas>
+            </div>
+            <p class="text-center text-sm text-gray-600 mt-2">
+                <span class="highlight-text">AI 활용에 대한 인식:</span> ‘매우 도움이 된다’ 9명, ‘도움이 된다’ 8명, ‘보통이다’ 2명으로, 전체 응답의 <span class="highlight-text">94.4%</span>가 긍정적으로 인식했다.
+            </p>
+
+            <h3 class="mt-8">AI의 주요 활용 분야</h3>
+            <div class="chart-container">
+                <canvas id="usageAreaChart"></canvas>
+            </div>
+            <p class="text-center text-sm text-gray-600 mt-2">
+                <span class="highlight-text">AI의 주요 활용 분야:</span> 학습(47.4%), 정보 검색 및 정리(26.3%), 엔터테인먼트(15.8%), 디자인·창작 및 소통(각 5.3%) 순으로 나타났다. 이는 AI가 학업 보조 도구로서 가장 많이 사용되고 있음을 시사한다.
+            </p>
+
+            <h3 class="mt-8">인터뷰 결과</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="border p-4 rounded-lg bg-gray-50">
+                    <h4 class="text-lg text-[#2A62B6]">인터뷰 인물 1: 진어진 (학번 1515)</h4>
+                    <p class="italic text-gray-700">"사람이 하지 못하는 기술적인 방면에서 AI가 도움이 될 수 있다고 생각한다."</p>
+                    <p class="text-sm text-gray-500 mt-2">※ 인터뷰 내용 전체: <a href="https://clovanote.naver.com/s/gh8rdcm6vEJdE9XVSydjsmS" target="_blank" class="text-[#2A62B6] hover:underline">클로바노트 링크</a></p>
+                </div>
+                <div class="border p-4 rounded-lg bg-gray-50">
+                    <h4 class="text-lg text-[#4ECDC4]">인터뷰 인물 2: 장은혁</h4>
+                    <p class="italic text-gray-700">"AI를 사용하면서 불편한 점이 없었고 아이디어 제공 측면에서 AI를 유용하게 사용 중이다."</p>
+                    <p class="text-sm text-gray-500 mt-2">※ 인터뷰 내용 전체: <a href="https://clovanote.naver.com/s/qneyjwAcEata8qbJ4d3JwAS" target="_blank" class="text-[#2A62B6] hover:underline">클로바노트 링크</a></p>
+                </div>
+            </div>
+            <p class="mt-4 text-center text-gray-700">인터뷰를 통해 학생들은 AI에 대해 긍정적인 생각과 가치관을 가진 것으로 확인되었다.</p>
+        </section>
+
+        <section class="card">
+            <h2>4. 결론 및 제언</h2>
+            <h3>결론</h3>
+            <p>이번 조사를 통해 미림 마이스터고 디자인과 학생들이 인공지능(AI)에 대해 대체로 <span class="highlight-text">긍정적인 인식을 가지고 있고</span>, 학습과 창작 과정에서 다양한 방식으로 AI를 적극 활용하고 있다는 사실을 확인했다. 특히 아이디어 발상, 과제 수행, 이미지 생성 등에서 AI는 창의성과 생산성을 높여주는 유용한 도구로 인식되고 있다는 것을 알 수 있었다.</p>
+            <p>다만 일부 학생들 사이에서는 AI를 단순히 편리한 보조 수단으로만 여기거나, 충분한 정보 없이 무분별하게 사용하는 경우도 나타났다. 또한 <span class="highlight-text">정보의 정확성 부족, 저작권 문제, 윤리적 사용에 대한 인식 부족</span> 등 아직 해결해야 할 과제들도 확인되었다.</p>
+            <p>AI는 디자인과 학생들의 창의적인 활동을 도와주는 강력한 도구가 될 수 있으나, 이를 어떻게 이해하고 활용하느냐에 따라 그 효과와 영향은 달라질 수 있다. 디자인과처럼 창의성과 표현 능력이 중요한 학과일수록, AI는 단순한 편의성 이상의 의미를 가지며, 학생들의 표현력 확장과 학습 효율 향상에 크게 기여할 수 있다. 앞으로도 AI는 더욱 다양한 교육 환경에서 중요한 도구로 자리매김할 것이며, 이를 학생들의 성장과 꿈을 실현하는 데 유익하게 활용하는 자세가 필요할 것이다.</p>
+
+            <h3 class="mt-8">제언 및 다짐</h3>
+            <div class="space-y-4">
+                <div class="p-4 bg-[#E0F2FE] rounded-lg border-l-4 border-[#2A62B6]">
+                    <h4 class="text-lg font-semibold text-[#2A62B6]">제언 1: AI 리터러시 교육 강화</h4>
+                    <p>학생 대상 AI 기본 원리, 정보 판별 능력, 저작권 및 윤리적 사용법에 대한 교육 기회를 확대하여 AI를 비판적으로 수용하고 올바르게 활용할 수 있는 역량을 강화해야 한다.</p>
+                </div>
+                <div class="p-4 bg-[#E0F2FE] rounded-lg border-l-4 border-[#4ECDC4]">
+                    <h4 class="text-lg font-semibold text-[#4ECDC4]">제언 2: 디자인 분야 특화 AI 활용 워크숍 개최</h4>
+                    <p>아이디어 스케치, 프로토타이핑, 포트폴리오 제작 등 디자인 실무에 직접 적용 가능한 AI 도구 활용 워크숍을 통해 창작 도구로서의 AI 활용 경험을 확대한다.</p>
+                </div>
+                <div class="p-4 bg-[#E0F2FE] rounded-lg border-l-4 border-[#A9A9A9]">
+                    <h4 class="text-lg font-semibold text-[#A9A9A9]">제언 3: AI 활용 가이드라인 공유 및 토론 활성화</h4>
+                    <p>학교 또는 학과 차원에서 AI 활용 가이드라인을 마련하고, 학생들 간의 AI 활용 사례 공유 및 토론을 장려하여 집단 지성을 통해 바람직한 활용 문화를 조성한다.</p>
+                </div>
+            </div>
+            <p class="mt-6 text-center text-gray-700">앞으로도 AI는 더욱 다양한 교육 환경에서 중요한 도구로 자리매김할 것이다. 우리 학생들은 이러한 변화에 능동적으로 대처하고, AI를 자신의 성장과 꿈을 실현하는 데 유익하게 활용하는 자세를 가져야겠다.</p>
+        </section>
+
+        <section class="card">
+            <h2>5. 참고 자료</h2>
+            <ul class="list-disc ml-6 text-gray-700">
+                <li><a href="https://docs.google.com/forms/d/1ajN_idMHj24eERWT54x-Jhk-9g89c2p7uI4pULk0beU/edit#response=ACYDBNhMAbK2t0pbgwfkTLo4KcZXTb3-AMWBRuMn-JSjWHUgsomGHOayGHO_v6t_v3zgPSs" target="_blank" class="text-[#2A62B6] hover:underline">Google Forms 설문조사 응답</a></li>
+                <li><a href="https://clovanote.naver.com/s/gh8rdcm6vEJdE9XVSydjsmS" target="_blank" class="text-[#2A62B6] hover:underline">인터뷰 주요 키워드 및 워드 클라우드 (진어진)</a></li>
+                <li><a href="https://clovanote.naver.com/s/qneyjwAcEata8qbJ4d3JwAS" target="_blank" class="text-[#2A62B6] hover:underline">인터뷰 주요 키워드 및 워드 클라우드 (장은혁)</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-[#263238] text-white py-6 text-center text-sm shadow-inner mt-8">
+        <div class="container">
+            <p>미림마이스터고 1학년 5반 4조 공동 조사 보고서</p>
+            <p>작성일: 2025년 5월 29일</p>
+            <p class="mt-2 text-gray-400">송예서 (1510), 최윤아 (1517), 강지윤 (1501), 맹제우 (1505), 김지유 (1503)</p>
+        </div>
+    </footer>
+
+    <script>
+        // TypeScript to JavaScript conversion
+        // Ensure chart.js is loaded before this script runs.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Chart 1: AI 활용에 대한 인식
+            const perceptionCtx = document.getElementById('perceptionChart').getContext('2d');
+            new Chart(perceptionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['매우 도움이 된다', '도움이 된다', '보통이다'],
+                    datasets: [{
+                        label: '응답자 수 (명)',
+                        data: [9, 8, 2],
+                        backgroundColor: [
+                            '#2A62B6', // Primary Blue
+                            '#4ECDC4', // Secondary Teal
+                            '#A9A9A9'  // Accent Grey
+                        ],
+                        borderColor: [
+                            '#2A62B6',
+                            '#4ECDC4',
+                            '#A9A9A9'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'AI 활용에 대한 인식',
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            },
+                            color: '#263238'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.raw + '명';
+                                    return label;
+                                },
+                                title: function(context) {
+                                    return context[0].label.replace(/\s/g, '\n'); // 줄 바꿈 처리
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    if (Number.isInteger(value)) {
+                                        return value;
+                                    }
+                                },
+                                color: '#263238'
+                            },
+                            title: {
+                                display: true,
+                                text: '응답자 수 (명)',
+                                color: '#263238'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#263238',
+                                callback: function(value, index, ticks) {
+                                    const label = this.getLabelForValue(value);
+                                    // 한국어 레이블 줄 바꿈: 약 16자 기준으로 의미 단위로 줄 바꿈 처리
+                                    if (label.length > 16) {
+                                        return label.split(' ').reduce((acc, word) => {
+                                            const lastLine = acc[acc.length - 1];
+                                            if (lastLine && (lastLine + ' ' + word).length <= 16) {
+                                                acc[acc.length - 1] += ' ' + word;
+                                            } else {
+                                                acc.push(word);
+                                            }
+                                            return acc;
+                                        }, []);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart 2: AI의 주요 활용 분야
+            const usageAreaCtx = document.getElementById('usageAreaChart').getContext('2d');
+            new Chart(usageAreaCtx, {
+                type: 'pie',
+                data: {
+                    labels: [
+                        '학습 (정보 검색, 번역, 요약 등)',
+                        '정보 검색 및 정리 (필요한 정보 찾기, 뉴스 요약 등)',
+                        '엔터테인먼트 및 취미 (음악 추천, 콘텐츠 제작 아이디어 등)',
+                        '디자인·창작 활동 (이미지 생성, 코드 자동 완성 등)',
+                        '소통 및 관계 (자동 응답, 번역을 통한 대화 등)'
+                    ],
+                    datasets: [{
+                        label: '응답 비율 (%)',
+                        data: [47.4, 26.3, 15.8, 5.3, 5.3],
+                        backgroundColor: [
+                            '#2A62B6', // 학습 - Primary Blue
+                            '#4ECDC4', // 정보 검색 및 정리 - Secondary Teal
+                            '#A9A9A9', // 엔터테인먼트 - Accent Grey
+                            '#E0F2FE', // 디자인/창작 - Supporting Light Blue (darker if needed)
+                            '#87CEEB'  // 소통/관계 - Lighter blue for contrast
+                        ],
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                font: {
+                                    size: 12
+                                },
+                                color: '#263238',
+                                boxWidth: 20,
+                                padding: 15,
+                                generateLabels: function(chart) {
+                                    const data = chart.data;
+                                    if (data.labels.length && data.datasets.length) {
+                                        return data.labels.map(function(label, i) {
+                                            const meta = chart.getDatasetMeta(0);
+                                            const style = meta.data[i].options;
+                                            const value = data.datasets[0].data[i];
+                                            const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                            const percentage = total > 0 ? (value / total * 100).toFixed(1) + '%' : '0%';
+
+                                            return {
+                                                text: `${label.length > 25 ? label.substring(0, 25) + '...' : label} (${percentage})`, // 긴 레이블 처리
+                                                fillStyle: style.backgroundColor,
+                                                strokeStyle: style.borderColor,
+                                                lineWidth: style.borderWidth,
+                                                hidden: !chart.isDatasetVisible(0) || meta.data[i].hidden,
+                                                index: i
+                                            };
+                                        });
+                                    }
+                                    return [];
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'AI의 주요 활용 분야 (총 응답자 19명)',
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            },
+                            color: '#263238'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                },
+                                title: function(context) {
+                                    const title = context[0].label;
+                                    // 한국어 레이블 줄 바꿈: 약 16자 기준으로 의미 단위로 줄 바꿈 처리
+                                    if (title.length > 16) {
+                                        return title.split(' ').reduce((acc, word) => {
+                                            const lastLine = acc[acc.length - 1];
+                                            if (lastLine && (lastLine + ' ' + word).length <= 16) {
+                                                acc[acc.length - 1] += ' ' + word;
+                                            } else {
+                                                acc.push(word);
+                                            }
+                                            return acc;
+                                        }, []);
+                                    }
+                                    return title;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    </body>
+</html>
